@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("lieunaiss");
             $table->string("sexe");
             $table->string("sm");
-
+            $table->string("adresse");
             $table->string("telephone");
             $table->string("email");
             $table->string("religion");

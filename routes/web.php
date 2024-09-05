@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EmploiController;
+use App\Http\Controllers\IdentificationController;
+use App\Http\Controllers\MobiliteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
+Route::resource('emploi', EmploiController::class);
+Route::resource('identification', IdentificationController::class);
+Route::resource('mobilite', MobiliteController::class);

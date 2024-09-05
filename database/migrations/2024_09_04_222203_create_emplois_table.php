@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string("unite");
             $table->string("bureau");
             $table->string("titre");
+            $table->string("service");
             $table->date("dateps");
             $table->unsignedBigInteger("identification_id");
             $table->foreign("identification_id")

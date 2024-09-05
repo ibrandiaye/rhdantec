@@ -9,6 +9,6 @@ class Identification extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "cni","matricule","matricule_universite","nom","prenom","datenaiss","lieunaiss","sexe","sm","telephone","email","religion"
+        "cni","matricule","matricule_universite","nom","prenom","datenaiss","lieunaiss","sexe","sm","adresse","telephone","email","religion"
     ];
 }

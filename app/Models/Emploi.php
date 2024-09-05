@@ -9,7 +9,7 @@ class Emploi extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "employeur","type_contrat","nature_contrat","fonction","responsabilite","csp","famille_pro","unite"
+        "employeur","type_contrat","nature_contrat","fonction","titre","responsabilite","csp","famille_pro","service","unite"
         ,"bureau","dateps","identification_id"
     ];
 }
