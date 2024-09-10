@@ -14,10 +14,7 @@
                     <li class="breadcrumb-item active"><a href="{{ route('emploi.index') }}" >LISTE D'ENREGISTREMENT DES EMPLOIS</a></li>
                 </ol>
             </div>
-           {{--    @if(Auth::user()->role=="admin") DGE
-                        @else
-                        {{Auth::user()->liste->nom}}
-                         @endif  --}}
+           {{--     --}}
         </div>
     </div>
     <div class="clearfix"></div>
@@ -41,67 +38,122 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>EMPLOYEUR</label>
-                                            <input type="text" name="employeur"  value="{{ old('employeur') }}" class="form-control"  required>
+                                            <select class="form-control" name="employeur_id" id="employeur_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($employeurs as $employeur)
+                                                    <option value="{{  $employeur->id }}" {{ old('employeur_id')==$employeur->id ? 'selected' : '' }}>{{  $employeur->matricule }} {{  $employeur->prenom }} {{  $employeur->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>TYPE DE CONTRAT</label>
-                                            <input type="text" name="type_contrat"  value="{{ old('type_contrat') }}" class="form-control"  required>
+                                            <select class="form-control" name="typecontrat_id" id="typecontrat_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($typeContrats as $typecontrat)
+                                                    <option value="{{  $typecontrat->id }}" {{ old('typecontrat_id')==$typecontrat->id ? 'selected' : '' }}>{{  $typecontrat->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>NATURE DU CONTRAT</label>
-                                            <input type="text" name="nature_contrat"  value="{{ old('nature_contrat') }}" class="form-control"  required>
+                                            <select class="form-control" name="nature_contrat_id" id="nature_contrat_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($natureContrats as $natureContrat)
+                                                    <option value="{{  $natureContrat->id }}" {{ old('nature_contrat_id')==$natureContrat->id ? 'selected' : '' }}>{{  $employeur->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>FONCTION</label>
-                                            <input type="text" name="fonction"  value="{{ old('fonction') }}" class="form-control"  required>
+                                             <select class="form-control" name="fonction_id" id="fonction_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($fonctions as $fonction)
+                                                    <option value="{{  $fonction->id }}" {{ old('fonction_id')==$fonction->id ? 'selected' : '' }}>{{  $fonction->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Titre</label>
-                                            <input type="text" name="titre"  value="{{ old('titre') }}" class="form-control"  required>
+                                            <select class="form-control" name="titre_id" id="titre_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($titres as $titre)
+                                                    <option value="{{  $titre->id }}" {{ old('titre_id')==$titre->id ? 'selected' : '' }}>{{  $titre->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>RESPONSABILITE</label>
-                                            <input type="text" name="responsabilite"  value="{{ old('responsabilite') }}" class="form-control"  required>
+                                             <select class="form-control" name="responsabilite_id" id="responsabilite_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($responsabilites as $responsabilite)
+                                                    <option value="{{  $responsabilite->id }}" {{ old('responsabilite_id')==$responsabilite->id ? 'selected' : '' }}>{{  $responsabilite->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>CSP</label>
-                                            <input type="text" name="csp"  value="{{ old('csp') }}" class="form-control"  required>
+                                            <select class="form-control" name="csp_id" id="csp_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($csps as $csp)
+                                                    <option value="{{  $csp->id }}" {{ old('csp_id')==$csp->id ? 'selected' : '' }}>{{  $csp->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>FAMILLE PROFESSIONNELLE</label>
-                                            <input type="text" name="famille_pro"  value="{{ old('famille_pro') }}" class="form-control"  required>
+                                             <select class="form-control" name="famille_pro_id" id="famille_pro_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($famillePros as $famillePro)
+                                                    <option value="{{  $famillePro->id }}" {{ old('famille_pro_id')==$famillePro->id ? 'selected' : '' }}>{{  $famillePro->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>SERVICE</label>
-                                            <input type="text" name="service"  value="{{ old('service') }}" class="form-control"  required>
+                                            <select class="form-control" name="service_id" id="service_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($services as $service)
+                                                    <option value="{{  $service->id }}" {{ old('service_id')==$service->id ? 'selected' : '' }}>{{  $service->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                       <div class="col-md-3">
                                         <div class="form-group">
                                             <label>DIVISION / UNITE</label>
-                                            <input type="text" name="unite"  value="{{ old('unite') }}" class="form-control"  required>
+                                             <select class="form-control" name="division_id" id="division_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($divisions as $division)
+                                                    <option value="{{  $division->id }}" {{ old('division_id')==$division->id ? 'selected' : '' }}>{{  $division->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>BUREAU</label>
-                                            <input type="text" name="bureau"  value="{{ old('bureau') }}" class="form-control"  required>
+                                            <select class="form-control" name="bureau_id" id="bureau_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($bureaus as $bureau)
+                                                    <option value="{{  $bureau->id }}" {{ old('bureau_id')==$bureau->id ? 'selected' : '' }}>{{  $bureau->nom }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                      <div class="col-md-3">

@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\TypeContratRepository;
 use Illuminate\Http\Request;
 
 class TypeContratController extends Controller
 {
     protected $typecontratRepository;
 
-    public function __construct(TypecontratRepository $typecontratRepository){
+    public function __construct(TypeContratRepository $typecontratRepository){
         $this->typecontratRepository =$typecontratRepository;
        // $this->middleware("auth")->except(["getAllTypecontrat"]);
     }

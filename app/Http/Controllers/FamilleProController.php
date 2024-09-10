@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\FamilleProRepository;
 use Illuminate\Http\Request;
 
 class FamilleProController extends Controller
 {
     protected $familleproRepository;
 
-    public function __construct(FamilleproRepository $familleproRepository){
+    public function __construct(FamilleProRepository $familleproRepository){
         $this->familleproRepository =$familleproRepository;
        // $this->middleware("auth")->except(["getAllFamillepro"]);
     }

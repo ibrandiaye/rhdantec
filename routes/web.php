@@ -15,6 +15,8 @@ use App\Http\Controllers\ResponsabiliteController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\TypeContratController;
+use App\Http\Controllers\EmployeurController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +45,4 @@ Route::resource('responsabilite', ResponsabiliteController::class);
 Route::resource('service', ServiceController::class);
 Route::resource('titre', TitreController::class);
 Route::resource('typecontrat', TypeContratController::class);
+Route::resource('employeur', EmployeurController::class);

@@ -1,7 +1,7 @@
 {{-- \resources\views\permissions\create.blade.php --}}
-@extends('welcome')
+@extends('layout')
 
-@section('title', '| Enregister naturecontrat')
+@section('title', '| Enregister typecontrat')
 
 @section('content')
 
@@ -11,20 +11,17 @@
             <div class="btn-group float-right">
                 <ol class="breadcrumb hide-phone p-0 m-0">
                     <li class="breadcrumb-item"><a href="#">ACCUEIL</a></li>
-                    <li class="breadcrumb-item active"><a href="{{ route('naturecontrat.index') }}" >LISTE D'ENREGISTREMENT DES NATURECONTRATS</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('typecontrat.index') }}" >LISTE D'ENREGISTREMENT DES TYPECONTRATS</a></li>
                 </ol>
             </div>
-             @if(Auth::user()->role=="admin") DGE
-                        @else
-                        {{Auth::user()->liste->nom}}
-                         @endif
+
         </div>
     </div>
     <div class="clearfix"></div>
 </div>
 
 
-        <form action="{{ route('naturecontrat.store') }}" method="POST">
+        <form action="{{ route('typecontrat.store') }}" method="POST">
             @csrf
             <div class="card">
                             <div class="card-body">

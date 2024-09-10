@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\TitreRepository;
 use Illuminate\Http\Request;
 
 class TitreController extends Controller

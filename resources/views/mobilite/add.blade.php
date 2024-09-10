@@ -14,10 +14,7 @@
                     <li class="breadcrumb-item active"><a href="{{ route('mobilite.index') }}" >LISTE D'ENREGISTREMENT DES MOBILITES</a></li>
                 </ol>
             </div>
-           {{--    @if(Auth::user()->role=="admin") DGE
-                        @else
-                        {{Auth::user()->liste->nom}}
-                         @endif  --}}
+           {{--     --}}
         </div>
     </div>
     <div class="clearfix"></div>

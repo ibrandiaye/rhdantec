@@ -1,5 +1,5 @@
 {{-- \resources\views\permissions\create.blade.php --}}
-@extends('welcome')
+@extends('layout')
 
 @section('title', '| Enregister fonction')
 
@@ -14,10 +14,7 @@
                     <li class="breadcrumb-item active"><a href="{{ route('fonction.index') }}" >LISTE D'ENREGISTREMENT DES FONCTIONS</a></li>
                 </ol>
             </div>
-             @if(Auth::user()->role=="admin") DGE
-                        @else
-                        {{Auth::user()->liste->nom}}
-                         @endif
+
         </div>
     </div>
     <div class="clearfix"></div>

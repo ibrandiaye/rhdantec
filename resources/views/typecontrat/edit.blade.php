@@ -1,7 +1,7 @@
 {{-- \resources\views\permissions\create.blade.php --}}
-@extends('welcome')
+@extends('layout')
 
-@section('title', '| Modifier Région')
+@section('title', '| Modifier ')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb hide-phone p-0 m-0">
                         <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                        <li class="breadcrumb-item active"><a href="{{ route('naturecontrat.index') }}" >RETOUR</a></li>
+                        <li class="breadcrumb-item active"><a href="{{ route('typecontrat.index') }}" >RETOUR</a></li>
 
                         </ol>
                     </div><!-- /.col -->
@@ -21,10 +21,10 @@
     </div>
 </div>
 
-        {!! Form::model($naturecontrat, ['method'=>'PATCH','route'=>['naturecontrat.update', $naturecontrat->id]]) !!}
+        {!! Form::model($typecontrat, ['method'=>'PATCH','route'=>['typecontrat.update', $typecontrat->id]]) !!}
             @csrf
              <div class="card">
-                        <div class="card-header text-center">FORMULAIRE DE MODIFICATION NATURECONTRAT</div>
+                        <div class="card-header text-center">FORMULAIRE DE MODIFICATION TYPECONTRAT</div>
                             <div class="card-body">
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -38,8 +38,8 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nom de la région</label>
-                                    <input type="text" name="nom" class="form-control" value="{{$naturecontrat->nom}}"  min="1" required>
+                                        <label>Nom de la </label>
+                                    <input type="text" name="nom" class="form-control" value="{{$typecontrat->nom}}"  min="1" required>
                                     </div>
                                 </div>
                                 <div>

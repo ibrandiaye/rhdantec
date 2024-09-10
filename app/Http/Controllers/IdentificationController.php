@@ -9,7 +9,7 @@ class IdentificationController extends Controller
 {
     protected $identificationRepository;
 
-    public function __construct(IdentificationRepository $identificationRepository){
+    public function __construct(identificationRepository: $identificationRepository){
         $this->identificationRepository =$identificationRepository;
        // $this->middleware("auth")->except(["getAllIdentification"]);
     }
@@ -52,7 +52,7 @@ class IdentificationController extends Controller
             $request->merge(['image'=>$nomImage]);
 
         }
-            
+
         $identifications = $this->identificationRepository->store($request->all());
         return redirect('identification');
 

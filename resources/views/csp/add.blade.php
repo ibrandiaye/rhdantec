@@ -1,5 +1,5 @@
 {{-- \resources\views\permissions\create.blade.php --}}
-@extends('welcome')
+@extends('layout')
 
 @section('title', '| Enregister csp')
 
@@ -14,10 +14,7 @@
                     <li class="breadcrumb-item active"><a href="{{ route('csp.index') }}" >LISTE D'ENREGISTREMENT DES CSPS</a></li>
                 </ol>
             </div>
-             @if(Auth::user()->role=="admin") DGE
-                        @else
-                        {{Auth::user()->liste->nom}}
-                         @endif
+
         </div>
     </div>
     <div class="clearfix"></div>

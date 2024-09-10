@@ -1,5 +1,5 @@
-@extends('welcome')
-@section('title', '| naturecontrat')
+@extends('layout')
+@section('title', '| typecontrat')
 
 
 @section('content')
@@ -10,7 +10,7 @@
 
                                 <ol class="breadcrumb hide-phone p-0 m-0">
                                 <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('naturecontrat.create') }}" role="button" >ENREGISTRER naturecontrat</a></li>
+                                <li class="breadcrumb-item active"><a href="{{ route('typecontrat.create') }}" role="button" >ENREGISTRER typecontrat</a></li>
                                 </ol>
                             </div><!-- /.col -->
                         </div>
@@ -29,25 +29,25 @@
 
 <div class="col-12">
     <div class="card ">
-        <div class="card-header">LISTE D'ENREGISTREMENT DES Naturecontrats</div>
+        <div class="card-header">LISTE D'ENREGISTREMENT DES Typecontrats</div>
             <div class="card-body">
 
                 <table id="example1" class="table table-bordered table-responsive-md table-striped text-center">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nom Région</th>
+                            <th>Nom </th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($naturecontrats as $naturecontrat)
+                    @foreach ($typecontrats as $typecontrat)
                         <tr>
-                            <td>{{ $naturecontrat->id }}</td>
-                            <td>{{ $naturecontrat->nom }}</td>
+                            <td>{{ $typecontrat->id }}</td>
+                            <td>{{ $typecontrat->nom }}</td>
                             <td>
-                                <a href="{{ route('naturecontrat.edit', $naturecontrat->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                {!! Form::open(['method' => 'DELETE', 'route'=>['naturecontrat.destroy', $naturecontrat->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
+                                <a href="{{ route('typecontrat.edit', $typecontrat->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                {!! Form::open(['method' => 'DELETE', 'route'=>['typecontrat.destroy', $typecontrat->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                 <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                 {!! Form::close() !!}
 

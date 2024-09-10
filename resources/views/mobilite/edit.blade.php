@@ -1,7 +1,7 @@
 {{-- \resources\views\permissions\create.blade.php --}}
 @extends('layout')
 
-@section('title', '| Modifier Région')
+@section('title', '| Modifier ')
 
 @section('content')
 

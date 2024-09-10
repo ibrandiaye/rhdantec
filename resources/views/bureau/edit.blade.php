@@ -1,7 +1,7 @@
 {{-- \resources\views\permissions\create.blade.php --}}
-@extends('welcome')
+@extends('layout')
 
-@section('title', '| Modifier Région')
+@section('title', '| Modifier ')
 
 @section('content')
 
@@ -38,7 +38,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nom de la région</label>
+                                        <label>Nom</label>
                                     <input type="text" name="nom" class="form-control" value="{{$bureau->nom}}"  min="1" required>
                                     </div>
                                 </div>

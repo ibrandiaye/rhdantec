@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\ServiceRepository;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller

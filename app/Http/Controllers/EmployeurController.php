@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\EmployeurRepository;
 use Illuminate\Http\Request;
 
 class EmployeurController extends Controller

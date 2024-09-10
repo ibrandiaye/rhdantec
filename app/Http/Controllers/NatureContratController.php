@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\NatureContratRepository;
 use Illuminate\Http\Request;
 
 class NatureContratController extends Controller
 {
     protected $naturecontratRepository;
 
-    public function __construct(NaturecontratRepository $naturecontratRepository){
+    public function __construct(NatureContratRepository $naturecontratRepository){
         $this->naturecontratRepository =$naturecontratRepository;
        // $this->middleware("auth")->except(["getAllNaturecontrat"]);
     }

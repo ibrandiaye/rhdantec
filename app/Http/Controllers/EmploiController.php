@@ -2,18 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\BureauRepository;
+use App\Repositories\CspRepository;
+use App\Repositories\DivisionRepository;
 use App\Repositories\EmploiRepository;
+use App\Repositories\EmployeurRepository;
+use App\Repositories\FamilleProRepository;
+use App\Repositories\FonctionRepository;
 use App\Repositories\IdentificationRepository;
+use App\Repositories\NatureContratRepository;
+use App\Repositories\ResponsabiliteRepository;
+use App\Repositories\ServiceRepository;
+use App\Repositories\TitreRepository;
+use App\Repositories\TypeContratRepository;
 use Illuminate\Http\Request;
 
 class EmploiController extends Controller
 {
     protected $emploiRepository;
     protected $identificationRepository;
+    protected $bureauRepository;
+    protected $cspRepository;
+    protected $familleProRepository;
+    protected $employeurRepository;
+    protected $fonctionRepository;
+    protected $natureContratProRepository;
+    protected $responsabiliteRepository;
+    protected $serviceRepository;
+    protected $titreRepository;
+    protected $typeContratRepository;
+    protected $divisionRepository;
 
-    public function __construct(EmploiRepository $emploiRepository,IdentificationRepository $identificationRepository){
+
+    public function __construct(EmploiRepository $emploiRepository,IdentificationRepository $identificationRepository,
+    BureauRepository $bureauRepository,CspRepository $cspRepository,FamilleProRepository $familleProRepository,EmployeurRepository $employeurRepository,
+    FonctionRepository $fonctionRepository,NatureContratRepository $natureContratRepository,ResponsabiliteRepository $responsabiliteRepository,
+    ServiceRepository $serviceRepository,TitreRepository $titreRepository,TypeContratRepository $typeContratRepository,
+    DivisionRepository $divisionRepository){
         $this->emploiRepository =$emploiRepository;
         $this->identificationRepository = $identificationRepository;
+        $this->bureauRepository =$bureauRepository;
+        $this->cspRepository =$cspRepository;
+        $this->familleProRepository =$familleProRepository;
+        $this->fonctionRepository =$fonctionRepository;
+        $this->natureContratProRepository =$natureContratRepository;
+        $this->typeContratRepository =$typeContratRepository;
+        $this->titreRepository =$titreRepository;
+        $this->employeurRepository =$employeurRepository;
+        $this->serviceRepository =$serviceRepository;
+        $this->responsabiliteRepository =$responsabiliteRepository;
+        $this->divisionRepository =$divisionRepository;
     }
 
     /**
@@ -34,8 +72,20 @@ class EmploiController extends Controller
      */
     public function create()
     {
-        $identifications = $this->identificationRepository->getAll();
-        return view('emploi.add',compact("identifications"));
+        $identifications        = $this->identificationRepository->getAll();
+        $bureaus                = $this->bureauRepository->getAll();
+        $csps                   = $this->cspRepository->getAll();
+        $famillePros            =   $this->familleProRepository->getAll();
+        $fonctions              = $this->fonctionRepository->getAll();
+        $natureContrats         = $this->natureContratProRepository->getAll();
+        $typeContrats           = $this->typeContratRepository->getAll();
+        $titres                 = $this->titreRepository->getAll();
+        $employeurs             = $this->employeurRepository->getAll();
+        $services               = $this->serviceRepository->getAll();
+        $responsabilites        = $this->responsabiliteRepository->getAll();
+        $divisions              = $this->divisionRepository->getAll();
+        return view('emploi.add',compact("identifications","bureaus","csps","famillePros","fonctions"
+        ,"natureContrats","typeContrats","titres","employeurs","services","responsabilites","divisions"));
     }
 
     /**
@@ -55,7 +105,7 @@ class EmploiController extends Controller
             $request->merge(['image'=>$nomImage]);
 
         }
-            
+
         $emplois = $this->emploiRepository->store($request->all());
         return redirect('emploi');
 
@@ -83,7 +133,19 @@ class EmploiController extends Controller
     {
         $emploi = $this->emploiRepository->getById($id);
         $identifications = $this->identificationRepository->getAll();
-        return view('emploi.edit',compact('emploi','identifications'));
+        $bureaus                = $this->bureauRepository->getAll();
+        $csps                   = $this->cspRepository->getAll();
+        $famillePros            =   $this->familleProRepository->getAll();
+        $fonctions              = $this->fonctionRepository->getAll();
+        $natureContrats         = $this->natureContratProRepository->getAll();
+        $typeContrats           = $this->typeContratRepository->getAll();
+        $titres                 = $this->titreRepository->getAll();
+        $employeurs             = $this->employeurRepository->getAll();
+        $services               = $this->serviceRepository->getAll();
+        $responsabilites        = $this->responsabiliteRepository->getAll();
+        $divisions              = $this->divisionRepository->getAll();
+        return view('emploi.edit',compact('emploi','identifications',"bureaus","csps","famillePros","fonctions"
+        ,"natureContrats","typeContrats","titres","employeurs","services","responsabilites","divisions"));
     }
 
     /**

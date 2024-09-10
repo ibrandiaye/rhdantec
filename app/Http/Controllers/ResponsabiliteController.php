@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\ResponsabiliteRepository;
 use Illuminate\Http\Request;
 
 class ResponsabiliteController extends Controller
