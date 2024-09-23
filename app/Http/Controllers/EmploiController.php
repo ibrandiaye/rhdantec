@@ -62,6 +62,7 @@ class EmploiController extends Controller
     public function index()
     {
         $emplois = $this->emploiRepository->getAll();
+       // dd($emplois);
         return view('emploi.index',compact('emplois'));
     }
 

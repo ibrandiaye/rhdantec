@@ -56,19 +56,19 @@
                     @foreach ($emplois as $emploi)
                         <tr>
                             <td>{{ $emploi->id }}</td>
-                            <td>{{ $emploi->employeur }}</td>
-                            <td>{{ $emploi->type_contrat }}</td>
-                            <td>{{ $emploi->nature_contrat }}</td>
-                            <td>{{ $emploi->fonction }}</td>
-                            <td>{{ $emploi->titre }}</td>
-                            <td>{{ $emploi->responsabilite }}</td>
-                            <td>{{ $emploi->csp }}</td>
-                            <td>{{ $emploi->famille_pro }}</td>
-                            <td>{{ $emploi->service }}</td>
-                            <td>{{ $emploi->unite }}</td>
-                            <td>{{ $emploi->bureau }}</td>
+                            <td>{{ $emploi->employeur->nom }}</td>
+                            <td>{{ $emploi->typeContrat->nom }}</td>
+                            <td>{{ $emploi->natureContrat->nom }}</td>
+                            <td>{{ $emploi->fonction->nom }}</td>
+                            <td>{{ $emploi->titre->nom }}</td>
+                            <td>{{ $emploi->responsabilite->nom }}</td>
+                            <td>{{ $emploi->csp->nom }}</td>
+                            <td>{{ $emploi->famillePro->nom }}</td>
+                            <td>{{ $emploi->service->nom }}</td>
+                            <td>{{ $emploi->division->nom }}</td>
+                            <td>{{ $emploi->bureau->nom }}</td>
                             <td>{{ $emploi->dateps }}</td>
-                            <td>{{ $emploi->identification_id }}</td>
+                            <td>{{ $emploi->identification->nom }}</td>
                             <td>
                                 <a href="{{ route('emploi.edit', $emploi->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['emploi.destroy', $emploi->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}

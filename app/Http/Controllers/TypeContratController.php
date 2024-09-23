@@ -23,6 +23,7 @@ class TypeContratController extends Controller
     public function index()
     {
         $typecontrats = $this->typecontratRepository->getAll();
+
         return view('typecontrat.index',compact('typecontrats'));
     }
 

@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\ServiceRepository;
 use Illuminate\Http\Request;
-
-class ServiceController extends Controller
+use App\Repositories\CategorieRepository;
+class CategorieController extends Controller
 {
-    protected $serviceRepository;
+    protected $categorieRepository;
 
-    public function __construct(ServiceRepository $serviceRepository){
-        $this->serviceRepository =$serviceRepository;
-       // $this->middleware("auth")->except(["getAllService"]);
+    public function __construct(CategorieRepository $categorieRepository){
+        $this->categorieRepository =$categorieRepository;
+       // $this->middleware("auth")->except(["getAllCategorie"]);
     }
 
     /**
@@ -22,8 +21,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = $this->serviceRepository->getAll();
-        return view('service.index',compact('services'));
+        $categories = $this->categorieRepository->getAll();
+        return view('categorie.index',compact('categories'));
     }
 
     /**
@@ -33,7 +32,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('service.add');
+        return view('categorie.add');
     }
 
     /**
@@ -46,8 +45,8 @@ class ServiceController extends Controller
     {
 
 
-        $services = $this->serviceRepository->store($request->all());
-        return redirect('service');
+        $categories = $this->categorieRepository->store($request->all());
+        return redirect('categorie');
 
     }
 
@@ -59,8 +58,8 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $service = $this->serviceRepository->getById($id);
-        return view('service.show',compact('service'));
+        $categorie = $this->categorieRepository->getById($id);
+        return view('categorie.show',compact('categorie'));
     }
 
     /**
@@ -71,8 +70,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service = $this->serviceRepository->getById($id);
-        return view('service.edit',compact('service'));
+        $categorie = $this->categorieRepository->getById($id);
+        return view('categorie.edit',compact('categorie'));
     }
 
     /**
@@ -84,8 +83,8 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->serviceRepository->update($id, $request->all());
-        return redirect('service');
+        $this->categorieRepository->update($id, $request->all());
+        return redirect('categorie');
     }
 
     /**
@@ -96,7 +95,7 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $this->serviceRepository->destroy($id);
-        return redirect('service');
+        $this->categorieRepository->destroy($id);
+        return redirect('categorie');
     }
 }

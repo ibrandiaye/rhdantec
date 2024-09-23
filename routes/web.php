@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\IdentificationController;
@@ -46,3 +48,5 @@ Route::resource('service', ServiceController::class);
 Route::resource('titre', TitreController::class);
 Route::resource('typecontrat', TypeContratController::class);
 Route::resource('employeur', EmployeurController::class);
+Route::resource('document', DocumentController::class);
+Route::resource('categorie', CategorieController::class);

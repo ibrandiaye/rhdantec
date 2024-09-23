@@ -49,10 +49,10 @@
                                      <div class="col-md-3">
                                         <div class="form-group">
                                             <label>TYPE DE CONTRAT</label>
-                                            <select class="form-control" name="typecontrat_id" id="typecontrat_id" required="">
+                                            <select class="form-control" name="type_contrat_id" id="type_contrat_id" required="">
                                                 <option value="">Selectionner</option>
                                                 @foreach ($typeContrats as $typecontrat)
-                                                    <option value="{{  $typecontrat->id }}" {{ old('typecontrat_id')==$typecontrat->id ? 'selected' : '' }}>{{  $typecontrat->nom }}</option>
+                                                    <option value="{{  $typecontrat->id }}" {{ old('type_contrat_id')==$typecontrat->id ? 'selected' : '' }}>{{  $typecontrat->nom }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

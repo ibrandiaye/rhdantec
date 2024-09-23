@@ -9,7 +9,7 @@ class IdentificationController extends Controller
 {
     protected $identificationRepository;
 
-    public function __construct(identificationRepository: $identificationRepository){
+    public function __construct(IdentificationRepository $identificationRepository){
         $this->identificationRepository =$identificationRepository;
        // $this->middleware("auth")->except(["getAllIdentification"]);
     }
