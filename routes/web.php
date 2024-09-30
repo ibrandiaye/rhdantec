@@ -32,7 +32,7 @@ use App\Http\Controllers\EmployeurController;
 
 Route::get('/', function () {
     return view('layout');
-});
+})->name("layout");
 Route::resource('emploi', EmploiController::class);
 Route::resource('identification', IdentificationController::class);
 Route::resource('mobilite', MobiliteController::class);
@@ -50,3 +50,7 @@ Route::resource('typecontrat', TypeContratController::class);
 Route::resource('employeur', EmployeurController::class);
 Route::resource('document', DocumentController::class);
 Route::resource('categorie', CategorieController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

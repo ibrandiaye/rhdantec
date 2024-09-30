@@ -10,7 +10,7 @@
 
                                 <ol class="breadcrumb hide-phone p-0 m-0">
                                 <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('identification.create') }}" role="button" >ENREGISTRER identification</a></li>
+                                <li class="breadcrumb-item active"><a href="{{ route('identification.create') }}" class="btn btn-primary"  role="button" style="color: white;">Enregistrer identification</a></li>
                                 </ol>
                             </div><!-- /.col -->
                         </div>
@@ -70,7 +70,8 @@
                             <td>{{ $identification->email }}</td>
                             <td>{{ $identification->religion }}</td>
                             <td>
-                                <a href="{{ route('identification.edit', $identification->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('identification.show', $identification->id) }}" role="button" style="color: white;"class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                <a href="{{ route('identification.edit', $identification->id) }}" role="button" style="color: white;"class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['identification.destroy', $identification->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                 <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                 {!! Form::close() !!}

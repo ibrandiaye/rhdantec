@@ -34,38 +34,43 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Fichier</label>
-                                        <input type="file" name="doc"  value="{{ old('doc') }}" class="form-control"  required>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Employé</label>
+                                            <select class="form-control" name="identification_id" id="identification_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($identifications as $identification)
+                                                    <option value="{{  $identification->id }}" {{ old('identification_id')==$identification->id ? 'selected' : '' }}>{{  $identification->matricule }} {{  $identification->prenom }} {{  $identification->nom }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Categorie</label>
-                                        <select class="form-control" name="categorie_id" id="categorie_id" required="">
-                                            <option value="">Selectionner</option>
-                                            @foreach ($categories as $categorie)
-                                                <option value="{{  $categorie->id }}" {{ old('categorie_id')==$categorie->id ? 'selected' : '' }}>{{  $categorie->nom }}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Categorie</label>
+                                            <select class="form-control" name="categorie_id" id="categorie_id" required="">
+                                                <option value="">Selectionner</option>
+                                                @foreach ($categories as $categorie)
+                                                    <option value="{{  $categorie->id }}" {{ old('categorie_id')==$categorie->id ? 'selected' : '' }}>{{  $categorie->nom }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Fichier</label>
+                                            <input type="file" name="doc"  value="{{ old('doc') }}" class="form-control"  required>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Employé</label>
-                                        <select class="form-control" name="identification_id" id="identification_id" required="">
-                                            <option value="">Selectionner</option>
-                                            @foreach ($identifications as $identification)
-                                                <option value="{{  $identification->id }}" {{ old('identification_id')==$identification->id ? 'selected' : '' }}>{{  $identification->matricule }} {{  $identification->prenom }} {{  $identification->nom }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+
+
                                 <div>
 
-                                        <button type="submit" class="btn btn-success btn btn-lg "> ENREGISTRER</button>
+                                        <button type="submit" class="btn btn-success btn btn-lg "> Enregistrer</button>
 
                                 </div>
                             </div>

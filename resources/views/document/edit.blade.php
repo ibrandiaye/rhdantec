@@ -21,7 +21,7 @@
     </div>
 </div>
 
-        {!! Form::model($categorie, ['method'=>'PATCH','route'=>['categorie.update', $categorie->id],"enctype"=>"multipart/form-data"]) !!}
+        {!! Form::model($document, ['method'=>'PATCH','route'=>['document.update', $document->id],"enctype"=>"multipart/form-data"]) !!}
             @csrf
              <div class="card">
                         <div class="card-header text-center">FORMULAIRE DE MODIFICATION CATEGORIE</div>
@@ -35,35 +35,38 @@
                                         </ul>
                                     </div>
                                 @endif
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Employé</label>
+                                                <select class="form-control" name="identification_id" id="identification_id" required="">
+                                                    <option value="">Selectionner</option>
+                                                    @foreach ($identifications as $identification)
+                                                        <option value="{{  $identification->id }}" {{$document->identification_id==$identification->id ? 'selected' : '' }}>{{  $identification->matricule }} {{  $identification->prenom }} {{  $identification->nom }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Categorie</label>
+                                                <select class="form-control" name="categorie_id" id="categorie_id" required="">
+                                                    <option value="">Selectionner</option>
+                                                    @foreach ($categories as $categorie)
+                                                        <option value="{{  $categorie->id }}" {{ $document->categorie_id===$categorie->id ? 'selected' : '' }}>{{  $categorie->nom }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Document  </label>
+                                            <input type="file" name="doc" class="form-control"  >
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Document  </label>
-                                    <input type="file" name="doc" class="form-control"  >
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Employé</label>
-                                        <select class="form-control" name="identification_id" id="identification_id" required="">
-                                            <option value="">Selectionner</option>
-                                            @foreach ($identifications as $identification)
-                                                <option value="{{  $identification->id }}" {{$document->identification_id==$identification->id ? 'selected' : '' }}>{{  $identification->matricule }} {{  $identification->prenom }} {{  $identification->nom }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Categorie</label>
-                                        <select class="form-control" name="categorie_id" id="categorie_id" required="">
-                                            <option value="">Selectionner</option>
-                                            @foreach ($categories as $categorie)
-                                                <option value="{{  $categorie->id }}" {{ $document->categorie_id===$categorie->id ? 'selected' : '' }}>{{  $categorie->nom }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+
                                 <div>
 
                                         <button type="submit" class="btn btn-success btn btn-lg "> MODIFIER</button>
