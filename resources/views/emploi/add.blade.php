@@ -63,7 +63,7 @@
                                             <select class="form-control" name="nature_contrat_id" id="nature_contrat_id" required="">
                                                 <option value="">Selectionner</option>
                                                 @foreach ($natureContrats as $natureContrat)
-                                                    <option value="{{  $natureContrat->id }}" {{ old('nature_contrat_id')==$natureContrat->id ? 'selected' : '' }}>{{  $employeur->nom }}</option>
+                                                    <option value="{{  $natureContrat->id }}" {{ old('nature_contrat_id')==$natureContrat->id ? 'selected' : '' }}>{{  $natureContrat->nom }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

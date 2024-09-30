@@ -21,7 +21,7 @@
     </div>
 </div>
 
-        {!! Form::model($categorie, ['method'=>'PATCH','route'=>['categorie.update', $categorie->id],"enctype"="multipart/form-data"]) !!}
+        {!! Form::model($categorie, ['method'=>'PATCH','route'=>['categorie.update', $categorie->id],"enctype"=>"multipart/form-data"]) !!}
             @csrf
              <div class="card">
                         <div class="card-header text-center">FORMULAIRE DE MODIFICATION CATEGORIE</div>
