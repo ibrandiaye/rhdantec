@@ -10,7 +10,7 @@
 
                                 <ol class="breadcrumb hide-phone p-0 m-0">
                                 <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('csp.create') }}" role="button" >ENREGISTRER csp</a></li>
+                                <li class="breadcrumb-item active"><a href="{{ route('csp.create') }}" class="btn btn-primary"  role="button" style="color: white;">Enregistrer csp</a></li>
                                 </ol>
                             </div><!-- /.col -->
                         </div>
@@ -46,7 +46,7 @@
                             <td>{{ $csp->id }}</td>
                             <td>{{ $csp->nom }}</td>
                             <td>
-                                <a href="{{ route('csp.edit', $csp->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('csp.edit', $csp->id) }}" role="button" style="color: white;"class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['csp.destroy', $csp->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                 <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                 {!! Form::close() !!}

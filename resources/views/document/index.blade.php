@@ -10,7 +10,7 @@
 
                                 <ol class="breadcrumb hide-phone p-0 m-0">
                                 <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('document.create') }}" role="button" >ENREGISTRER document</a></li>
+                                <li class="breadcrumb-item active"><a href="{{ route('document.create') }}"  class="btn btn-primary"  role="button" style="color: white;">Enregistrer document</a></li>
                                 </ol>
                             </div><!-- /.col -->
                         </div>
@@ -49,7 +49,7 @@
                             <td>{{ $document->categorie->nom }}</td>
                             <td><a href="{{ asset('fichier/'.$document->nom) }}">voir document</a></td>
                             <td>
-                                <a href="{{ route('document.edit', $document->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('document.edit', $document->id) }}" role="button" style="color: white;"class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['document.destroy', $document->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                 <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                 {!! Form::close() !!}

@@ -78,15 +78,27 @@
                                     <li><a href="{{ route('mobilite.index') }}">Lister</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-title">Parametre</li>
+                            <li class="menu-title">
+
+                                Parametre</li>
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map-marker-multiple"></i><span>Bureau </span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map-marker-multiple"></i><span>Base de donnee </span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('bureau.create') }}"> Ajouter</a></li>
-                                    <li><a href="{{ route('bureau.index') }}">Lister</a></li>
+                                   {{--  <li><a href="{{ route('bureau.create') }}"> Ajouter</a></li> --}}
+                                    <li><a href="{{ route('bureau.index') }}">Bureau</a></li>
+                                    <li><a href="{{ route('csp.index') }}">CSP</a></li>
+                                    <li><a href="{{ route('division.index') }}">Division</a></li>
+                                    <li><a href="{{ route('employeur.index') }}">Employeur</a></li>
+                                    <li><a href="{{ route('famillepro.index') }}">Famille Pro</a></li>
+                                    <li><a href="{{ route('fonction.index') }}">Fonction</a></li>
+                                    <li><a href="{{ route('naturecontrat.index') }}">Nature Contrat</a></li>
+                                    <li><a href="{{ route('responsabilite.index') }}">Responsabilite</a></li>
+                                    <li><a href="{{ route('service.index') }}">Service</a></li>
+                                    <li><a href="{{ route('titre.index') }}">Tire</a></li>
+                                    <li><a href="{{ route('typecontrat.index') }}">Type Contrat</a></li>
                                 </ul>
                             </li>
-                            <li class="has_sub">
+                           {{--  <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map-marker-multiple"></i><span>CSP </span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route('csp.create') }}"> Ajouter</a></li>
@@ -155,7 +167,7 @@
                                     <li><a href="{{ route('typecontrat.create') }}">Ajouter</a></li>
                                     <li><a href="{{ route('typecontrat.index') }}">Lister</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
 
                         </ul>
                     </div>

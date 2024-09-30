@@ -10,7 +10,7 @@
 
                                 <ol class="breadcrumb hide-phone p-0 m-0">
                                 <li class="breadcrumb-item"><a href="#" role="button">ACCUEIL</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('titre.create') }}" role="button" >ENREGISTRER titre</a></li>
+                                <li class="breadcrumb-item active"><a href="{{ route('titre.create') }}" class="btn btn-primary" role="button" style="color: white;">Enregistrer titre</a></li>
                                 </ol>
                             </div><!-- /.col -->
                         </div>
@@ -46,7 +46,7 @@
                             <td>{{ $titre->id }}</td>
                             <td>{{ $titre->nom }}</td>
                             <td>
-                                <a href="{{ route('titre.edit', $titre->id) }}" role="button" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('titre.edit', $titre->id) }}" role="button" style="color: white;"class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 {!! Form::open(['method' => 'DELETE', 'route'=>['titre.destroy', $titre->id], 'style'=> 'display:inline', 'onclick'=>"if(!confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?')) { return false; }"]) !!}
                                 <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                 {!! Form::close() !!}
