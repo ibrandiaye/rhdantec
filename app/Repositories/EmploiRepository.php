@@ -25,7 +25,7 @@ class EmploiRepository extends RessourceRepository{
         ->join("titres","emplois.titre_id","=","titres.id")
         ->join("type_contrats","emplois.type_contrat_id","=","type_contrats.id")
         ->select("emplois.*","csps.nom as csp","bureaus.nom as bureau","divisions.nom as division","employeurs.nom as employeur","famille_pros.nom as famille_pro","fonctions.nom as fonction","identifications.nom as identification"
-        ,"nature_contrats.nom as natureContrat","responsabilites.nom as responsabilite","services.nom as nom","titres.nom as titre","type_contrats.nom as typeContrat")
+        ,"nature_contrats.nom as natureContrat","responsabilites.nom as responsabilite","services.nom as service","titres.nom as titre","type_contrats.nom as typeContrat")
         ->where("emplois.id","=", $id)
         ->get();
     }

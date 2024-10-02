@@ -34,7 +34,7 @@
                 <div class="px-1 pb-1">
 
                         <div class="row mb-3 ">
-                            <div for="email" class="col-md-7 "><div class="d-grid gap-2"><a href="{{ route('layout') }}" class="btn btn-info btn-block"">
+                            <div for="email" class="col-md-7 "><div class="d-grid gap-2"><a href="{{ route('home') }}" class="btn btn-info btn-block"">
                                 Gestion Fchier
                             </a></div></div></label>
 

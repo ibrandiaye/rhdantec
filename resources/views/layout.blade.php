@@ -78,6 +78,13 @@
                                     <li><a href="{{ route('mobilite.index') }}">Lister</a></li>
                                 </ul>
                             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map-marker-multiple"></i><span>Document </span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('document.create') }}">Ajouter</a></li>
+                                    <li><a href="{{ route('document.index') }}">Lister</a></li>
+                                </ul>
+                            </li>
                             <li class="menu-title">
 
                                 Parametre</li>
@@ -96,6 +103,7 @@
                                     <li><a href="{{ route('service.index') }}">Service</a></li>
                                     <li><a href="{{ route('titre.index') }}">Tire</a></li>
                                     <li><a href="{{ route('typecontrat.index') }}">Type Contrat</a></li>
+                                    <li><a href="{{ route('categorie.index') }}">Catégorie Document</a></li>
                                 </ul>
                             </li>
                            {{--  <li class="has_sub">

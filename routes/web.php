@@ -31,26 +31,26 @@ use App\Http\Controllers\EmployeurController;
 */
 
 Route::get('/', function () {
-    return view('layout');
+    return view('home');
 })->name("layout");
-Route::resource('emploi', EmploiController::class);
-Route::resource('identification', IdentificationController::class);
-Route::resource('mobilite', MobiliteController::class);
+Route::resource('emploi', EmploiController::class)->middleware("auth");
+Route::resource('identification', IdentificationController::class)->middleware("auth");
+Route::resource('mobilite', MobiliteController::class)->middleware("auth");
 
-Route::resource('bureau', BureauController::class);
-Route::resource('csp', CspController::class);
-Route::resource('division', DivisionController::class);
-Route::resource('famillepro', FamilleProController::class);
-Route::resource('fonction', FonctionController::class);
-Route::resource('naturecontrat', NatureContratController::class);
-Route::resource('responsabilite', ResponsabiliteController::class);
-Route::resource('service', ServiceController::class);
-Route::resource('titre', TitreController::class);
-Route::resource('typecontrat', TypeContratController::class);
-Route::resource('employeur', EmployeurController::class);
-Route::resource('document', DocumentController::class);
-Route::resource('categorie', CategorieController::class);
+Route::resource('bureau', BureauController::class)->middleware("auth");
+Route::resource('csp', CspController::class)->middleware("auth");
+Route::resource('division', DivisionController::class)->middleware("auth");
+Route::resource('famillepro', FamilleProController::class)->middleware("auth");
+Route::resource('fonction', FonctionController::class)->middleware("auth");
+Route::resource('naturecontrat', NatureContratController::class)->middleware("auth");
+Route::resource('responsabilite', ResponsabiliteController::class)->middleware("auth");
+Route::resource('service', ServiceController::class)->middleware("auth");
+Route::resource('titre', TitreController::class)->middleware("auth");
+Route::resource('typecontrat', TypeContratController::class)->middleware("auth");
+Route::resource('employeur', EmployeurController::class)->middleware("auth");
+Route::resource('document', DocumentController::class)->middleware("auth");
+Route::resource('categorie', CategorieController::class)->middleware("auth");
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware("auth");

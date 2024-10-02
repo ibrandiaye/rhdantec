@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\DocumentRepository;
+use App\Repositories\EmploiRepository;
 use App\Repositories\IdentificationRepository;
 use Illuminate\Http\Request;
 
 class IdentificationController extends Controller
 {
     protected $identificationRepository;
+    protected $emploiRepository;
+    protected $documentRepository;
 
-    public function __construct(IdentificationRepository $identificationRepository){
+    public function __construct(IdentificationRepository $identificationRepository,EmploiRepository $emploiRepository,
+    DocumentRepository $documentRepository){
         $this->identificationRepository =$identificationRepository;
        // $this->middleware("auth")->except(["getAllIdentification"]);
+       $this->emploiRepository = $emploiRepository;
+       $this->documentRepository = $documentRepository;
     }
 
     /**
@@ -67,7 +74,9 @@ class IdentificationController extends Controller
     public function show($id)
     {
         $identification = $this->identificationRepository->getById($id);
-        return view('identification.show',compact('identification'));
+        $emplois        = $this->emploiRepository->getEmploiByIdentification($id);
+        $documents       = $this->documentRepository->getByDocument($id);
+        return view('identification.show',compact('identification','emplois','documents'));
     }
 
     /**
