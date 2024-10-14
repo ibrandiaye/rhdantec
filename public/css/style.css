@@ -3556,7 +3556,7 @@ label {
   border-radius: 10px;
 }
 
-.user-thumb {
+.user-thumb { 
   position: relative;
   z-index: 999;
 }
