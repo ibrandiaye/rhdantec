@@ -53,15 +53,15 @@
     </div><!-- end col -->
 
     @foreach ($emplois as $item)
-        
-  
+
+
     <div class="col-md-4 col-lg-4 col-xl-4">
 
         <div class="card">
          {{--    <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg" alt="Card image cap"> --}}
             <div class="card-body">
                 <h4 class="card-title font-20 mt-0">Emploi</h4>
-             
+
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Employeur : <strong>{{ $item->employeur }} </strong></li>
                 <li class="list-group-item">Type de contrat : <strong>{{ $item->typeContrat }}</strong></li>
@@ -91,13 +91,13 @@
          {{--    <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg" alt="Card image cap"> --}}
             <div class="card-body">
                 <h4 class="card-title font-20 mt-0">Document</h4>
-           
+
                 <ul class="list-group list-group-flush">
                     @foreach ($documents as $item)
-                        <a href="{{ asset('fichier/'.$item->nom) }}" target="_blank">                    <li class="list-group-item">Nom : <strong>{{ $item->categorie }}</strong></li>
+                        <a href="{{ asset('fichier/'.$item->nom) }}" target="_blank">                    <li class="list-group-item">Nom : <strong>{{ $item->libelle }}</strong></li>
                         </a>
                     @endforeach
-                   
+
 
                 </ul>
                 {{--  <div class="card-body">

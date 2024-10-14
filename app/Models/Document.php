@@ -9,15 +9,20 @@ class Document extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "nom","categorie_id","identification_id"
+        "nom","identification_id","libelle","candidat_id"
     ];
 
-    public function categorie()
+   /*  public function categorie()
     {
         return $this->belongsTo(Categorie::class);
-    }
+    } */
     public function identification()
     {
         return $this->belongsTo(Identification::class);
     }
+    public function candidat()
+    {
+        return $this->belongsTo(Candidat::class);
+    }
+
 }

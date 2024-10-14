@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_stage')
 
 @section('content')
 <section class="pcoded-main-container">

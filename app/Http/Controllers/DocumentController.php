@@ -52,6 +52,7 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->merge(["libelle"=>$request->nom]);
         if($request['doc'])
         {
             $files = $request['doc'];
@@ -63,7 +64,10 @@ class DocumentController extends Controller
         }
 
         $documents = $this->documentRepository->store($request->all());
-        return redirect('document');
+        if(($request->candidat_id))
+            return redirect()->back();
+        else
+            return redirect('document');
 
     }
 

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_stage')
 
 @section('content')
 <section class="pcoded-main-container">
@@ -283,7 +283,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-6 col-form-label font-weight-bolder">Nom Document</label>
                                 <div class="col-sm-6">
-                                    <a href="{{ asset('clceorccis/'.$document->fichier) }}">{{ $document->nom }}</a>
+                                    <a href="{{ asset('fichier/'.$document->nom) }}">{{ $document->libelle }}</a>
                                 </div>
                             </div>
                             @endforeach
@@ -331,7 +331,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="form-label">Document</label>
-                        <input type="file" class="form-control"  name="docs"  required>
+                        <input type="file" class="form-control"  name="doc"  required>
                     </div>
                 </div>
                             <input type="hidden" value="{{ $candidat->id }}" name="candidat_id">

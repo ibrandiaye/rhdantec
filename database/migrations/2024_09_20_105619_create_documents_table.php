@@ -18,10 +18,7 @@ return new class extends Migration
             $table->foreign("identification_id")
             ->references("id")
             ->on("identifications");
-            $table->unsignedBigInteger("categorie_id");
-            $table->foreign("categorie_id")
-            ->references("id")
-            ->on("categories");
+
             $table->timestamps();
         });
     }

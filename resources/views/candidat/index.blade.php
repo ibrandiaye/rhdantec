@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_stage')
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/plugins/dataTables.bootstrap4.min.css') }}">
 <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" />
@@ -33,7 +33,7 @@
                     <h5>Candidats</h5>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('export.candidat') }}" class="btn btn-primary"> Exporter</a>
+                    {{-- <a href="{{ route('export.candidat') }}" class="btn btn-primary"> Exporter</a>
                     <form action="{{ route('candidat.search') }}" method="POST" >
                         @csrf
                         <div class="row">
@@ -87,7 +87,7 @@
                         </div>
                         <br><br>
                         </div>
-                    </form>
+                    </form> --}}
                     <div class="dt-responsive table-responsive">
                         <table id="simpletable1" class="table table-striped table-bordered nowrap">
                             <thead>

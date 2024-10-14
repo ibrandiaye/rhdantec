@@ -13,8 +13,6 @@ class DocumentRepository extends RessourceRepository{
     public function getByDocument($id)
     {
         return DB::table("documents")
-        ->join("categories","documents.categorie_id","=","categories.id")
-        ->select("documents.*","categories.nom as categorie")
         ->where("identification_id",$id)->get();
     }
 

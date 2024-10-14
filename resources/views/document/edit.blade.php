@@ -49,13 +49,9 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Categorie</label>
-                                                <select class="form-control" name="categorie_id" id="categorie_id" required="">
-                                                    <option value="">Selectionner</option>
-                                                    @foreach ($categories as $categorie)
-                                                        <option value="{{  $categorie->id }}" {{ $document->categorie_id===$categorie->id ? 'selected' : '' }}>{{  $categorie->nom }}</option>
-                                                    @endforeach
-                                                </select>
+                                                <label>libelle</label>
+                                                <input type="text" name="libelle"  value="{{ $identification->libelle }}" class="form-control"  required>
+
                                             </div>
                                         </div>
                                         <div class="col-md-4">

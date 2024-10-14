@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_stage')
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/plugins/dataTables.bootstrap4.min.css') }}">
 @endsection

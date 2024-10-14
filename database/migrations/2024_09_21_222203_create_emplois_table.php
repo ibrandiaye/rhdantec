@@ -13,19 +13,7 @@ return new class extends Migration
     {
         Schema::create('emplois', function (Blueprint $table) {
             $table->id();
-            //   "","","","","","","",""
-        //,"","",""
-           /*  $table->string("employeur");
-            $table->string("type_contrat");
-            $table->string("nature_contrat");
-            $table->string("fonction");
-            $table->string("responsabilite");
-            $table->string("csp");
-            $table->string("famille_pro");
-            $table->string("unite");
-            $table->string("bureau");
-            $table->string("titre");
-            $table->string("service"); */
+
             $table->date("dateps");
             $table->unsignedBigInteger("identification_id");
             $table->foreign("identification_id")

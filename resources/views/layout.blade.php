@@ -209,7 +209,7 @@
                                             <h5>Bienvenue</h5>
                                         </div>
 
-                                     {{--    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                      <i class="mdi mdi-logout m-r-5 text-muted"></i>{{ __('Deconnexion') }}
@@ -217,7 +217,7 @@
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                    </form>   --}}
+                                    </form>
                                     </div>
                                 </li>
 

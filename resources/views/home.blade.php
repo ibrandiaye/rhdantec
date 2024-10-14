@@ -34,26 +34,31 @@
                 <div class="px-1 pb-1">
 
                         <div class="row mb-3 ">
-                            <div for="email" class="col-md-7 "><div class="d-grid gap-2"><a href="{{ route('home') }}" class="btn btn-info btn-block"">
+                            <div for="email" class="col-md-6 "><div class="d-grid gap-2"><a href="{{ route('home') }}" class="btn btn-outline-info  btn-block">
                                 Gestion Fchier
                             </a></div></div></label>
 
-                            <div class="col-md-5 d-grid gap-2">
-                             <button type="submit" class="btn btn-warning btn-block">
+                            <div class="col-md-6 d-grid gap-2">
+                             <button type="submit" class="btn btn-outline-warning btn-block">
                                     Gestion Mobilité
                                  </button>
                             </div>
                         </div>
                         <div class="row mb-6 d-grid gap-2">
-                            <div for="email" class="col-md-7 "><button type="submit" class="btn btn-primary btn-block">
-                                Gestion Redeploiement
-                             </button></div>
+                            <div for="email" class="col-md-4 "><a href="{{ route('gestion.stage') }}" type="submit" class="btn btn-outline-primary btn-block">
+                                Gestion Stage
+                             </a></div>
 
-                            <div class="col-md-5">
-                             <button type="submit" class="btn btn-danger btn-block">
+                            <div class="col-md-4">
+                             <button type="submit" class="btn btn-outline-danger btn-block">
                                     Gestion Solde
                                  </button>
                             </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-outline-success btn-block">
+                                       Gestion Carière
+                                    </button>
+                               </div>
                         </div>
 
 

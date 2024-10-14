@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AutorisationController;
+use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ProlongationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\IdentificationController;
@@ -50,7 +53,15 @@ Route::resource('typecontrat', TypeContratController::class)->middleware("auth")
 Route::resource('employeur', EmployeurController::class)->middleware("auth");
 Route::resource('document', DocumentController::class)->middleware("auth");
 Route::resource('categorie', CategorieController::class)->middleware("auth");
+Route::resource('candidat', CandidatController::class)->middleware("auth");
+Route::resource('autorisation', AutorisationController::class)->middleware("auth");
+Route::resource('prolongation', ProlongationController::class)->middleware("auth");
+Route::get('/prolongation/candidat/{id}/{candidat}', [ProlongationController::class,'getCandidatId'])->name('prolonger.by.id');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware("auth");
+
+Route::get('/gestion/stage', function () {
+    return view('gestion_stage');
+})->name("gestion.stage")->middleware("auth");

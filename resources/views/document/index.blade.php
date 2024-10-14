@@ -37,7 +37,7 @@
                         <tr>
 
                             <th>Employe </th>
-                            <th>Categorie </th>
+                            <th>Libelle </th>
                             <th>Document </th>
                             <th>Actions</th>
                         </tr>
@@ -46,7 +46,7 @@
                     @foreach ($documents as $document)
                         <tr>
                             <td>{{ $document->identification->prenom }} {{ $document->identification->nom }}</td>
-                            <td>{{ $document->categorie->nom }}</td>
+                            <td>{{ $document->libelle }}</td>
                             <td><a href="{{ asset('fichier/'.$document->nom) }}">voir document</a></td>
                             <td>
                                 <a href="{{ route('document.edit', $document->id) }}" role="button" style="color: white;"class="btn btn-primary"><i class="fas fa-edit"></i></a>
